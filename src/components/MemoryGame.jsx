@@ -56,6 +56,7 @@ export default function MemoryGame() {
     <div className="victoryMessage">
       <h1>VICTORY!</h1>
       <p>Congratulations! You've matched all the cards.</p>
+      <button onClick={handlePlayAgain}>Play Again</button>
     </div>
   );
 
