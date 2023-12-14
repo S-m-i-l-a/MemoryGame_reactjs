@@ -52,14 +52,16 @@ export default function MemoryGame() {
     setGameOver(false);
   };
 
-  // Check if all cards have been matched
-  if (remainingCards.length === 0 && !gameOver) {
-    setGameOver(true);
-  }
+  const victoryMessage = (
+    <div className="victoryMessage">
+      <h1>VICTORY!</h1>
+      <p>Congratulations! You've matched all the cards.</p>
+    </div>
+  );
 
   return (
     <>
-      {remainingCards.length > 0 ? `Remaining cards: ` : "Victory!"}
+      {remainingCards.length > 0 ? `Remaining cards: ` : victoryMessage}
       {remainingCards.map((card, index) => (
         <img
           key={index}
@@ -90,7 +92,10 @@ export default function MemoryGame() {
       <div>
         <p>Moves used: {moves}</p>
         {gameOver && (
-          <button onClick={handlePlayAgain}>Play Again</button>
+          <>
+            <button onClick={handlePlayAgain}>Play Again</button>
+            {remainingCards.length === 0 && victoryMessage}
+          </>
         )}
       </div>
     </>
