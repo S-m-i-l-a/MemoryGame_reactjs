@@ -54,8 +54,7 @@ export default function MemoryGame() {
 
   const victoryMessage = (
     <div className="victoryMessage">
-      <h1>VICTORY!</h1>
-      <p>Congratulations! You've matched all the cards.</p>
+      <h2>VICTORY!! Congratulations! You've matched all the cards.</h2>
       <button onClick={handlePlayAgain}>Play Again</button>
     </div>
   );
